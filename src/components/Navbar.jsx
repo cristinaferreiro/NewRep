@@ -1,4 +1,6 @@
 import logo from "./../assets/logo-ironhack-blue.png";
+import { NavLink } from "react-router-dom"
+
 
 function Navbar() {
   return (
@@ -10,10 +12,17 @@ function Navbar() {
           <button className="flex items-center text-l py-1">
             <img src={logo} alt="Logo" className="h-8 w-auto" />
           </button>
+
+          <NavLink
+            to="/"
+            className={({ isActive }) => isActive ? "selected" : ""}
+          >Home Page
+          </NavLink>
+
         </div>
 
         <div className="flex justify-center w-1/2">
-        <span className="text-xl">
+          <span className="text-xl">
             Cohort Tools
           </span>
         </div>
@@ -27,6 +36,13 @@ function Navbar() {
               className="h-10 w-auto border-solid border border-white rounded-3xl p-1"
             />
           </button>
+
+          <NavLink
+            to="/Profile"
+            className={({ isActive }) => isActive ? "selected" : ""}
+
+          >Profile
+          </NavLink>
 
         </div>
       </div>
